@@ -129,7 +129,6 @@ The gallery works in all modern browsers and FileMaker WebViewer components (Fil
 - [fm-gofer](https://github.com/jwillinghalpern/fm-gofer) - FileMaker integration
 - [LightGallery](https://www.lightgalleryjs.com/) - Lightbox functionality
 - [React Masonry CSS](https://github.com/paulcollett/react-masonry-css) - Masonry layout
-- [Picsum Photos](https://picsum.photos/) - Sample gallery images used in examples
 
 ## License
 
