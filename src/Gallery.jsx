@@ -4,12 +4,10 @@ import Masonry from "react-masonry-css";
 
 import { getDataFromFM, callFileMakerInfoScript } from "./functions";
 
-// import styles
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 
-// import plugins if you need
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
@@ -19,7 +17,6 @@ export function Gallery() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // FileMaker-Datenladung
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -45,15 +42,15 @@ export function Gallery() {
     }
   };
 
-  // Event Handler für FileMaker-Info-Button
+  // Event handler for FileMaker-Info-Button
   const onAfterOpen = () => {
-    // Prüfe ob Button bereits existiert
+    // check if button exists
     const existingButton = document.getElementById("lg-fm-info");
     if (existingButton) {
-      return; // Button bereits vorhanden, nichts tun
+      return;
     }
 
-    // Füge FileMaker-Info-Button zur Toolbar hinzu
+    // Define button for tool bar
     const fmInfoBtn = `
       <button type="button" 
               aria-label="FileMaker Info" 
@@ -66,19 +63,19 @@ export function Gallery() {
       </button>
     `;
 
-    // Füge Button zur Toolbar hinzu
+    // Add button to tool bar
     const toolbar = document.querySelector(".lg-toolbar");
     if (toolbar) {
       toolbar.insertAdjacentHTML("beforeend", fmInfoBtn);
 
-      // Event Listener für den Button
+      // Event listener for the button
       const fmButton = document.getElementById("lg-fm-info");
       if (fmButton) {
         fmButton.addEventListener("click", () => {
           const currentIndex = lightboxRef.current.index;
           const currentImage = images[currentIndex];
 
-          // Rufe FileMaker-Funktion auf mit Bild-ID
+          // Call FileMaker function using Image-ID
           if (currentImage) {
             callFileMakerInfoScript(currentImage.id);
           }
@@ -116,7 +113,7 @@ export function Gallery() {
             onClick={() => window.location.reload()}
             className="retry-button"
           >
-            Erneut versuchen
+            Try load again
           </button>
         </div>
       </div>
