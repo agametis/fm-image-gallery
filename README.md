@@ -4,6 +4,8 @@ A modern React-based image gallery application designed specifically for FileMak
 
 **⚠️ Important: This gallery is designed to run within FileMaker WebViewer and requires FileMaker data. It will not work as a standalone web application without modification.**
 
+![Image Gallery](./image-gallery-screenshot.jpg)
+
 ## Features
 
 - **Modern React Gallery**: Built with React and Vite for optimal performance
