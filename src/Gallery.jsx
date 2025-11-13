@@ -27,8 +27,8 @@ export function Gallery() {
         setImages(data || []);
         setIsLoading(false);
       } catch (err) {
-        console.error("Fehler beim Laden der Bilder:", err);
-        setError("Fehler beim Laden der Bilder aus FileMaker");
+        console.error("Error loading the pictures from FileMaker:", err);
+        setError("Error loading the pictures from FileMaker");
         setIsLoading(false);
       }
     };
